@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="icon" href="/images/favicon-icon.png" type="image/x-icon" />
+    <title>Validate API</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <!-- bulleted Section (validate API Key, API Widget Setup) -->
+      <section class="form-steps-container">
+        <!-- validate API Key -->
+        <div data-form-id="1" class="step-bullet">
+          <!-- bullet icons - normal/active/checked state -->
+          <div class="bullet">
+            <img
+              class="current-icon"
+              src="/images/blue-active-circle.svg"
+              alt="icon"
+            />
+            <img class="success-icon" src="/images/checked-circle.svg" alt="icon" />
+          </div>
+          <div class="bullet-info">
+            <div class="step-title active">Validate API Key</div>
+            <div class="desc">Enter your API key to proceed.</div>
+          </div>
+        </div>
+        <!--// validate API Key -->
+        <div class="line"></div>
+        <!-- API Widget Setup -->
+        <div data-form-id="2" class="step-bullet">
+          <div class="bullet">
+            <img class="inactive-state-2" src="/images/circle-icon.svg" alt="" />
+            <img
+              class="current-icon-2"
+              src="/images/blue-active-circle.svg"
+              alt=""
+            />
+            <img class="success-icon-2" src="/images/checked-circle.svg" alt="" />
+          </div>
+          <div class="bullet-info">
+            <div class="step-title inactive">API Widget Setup</div>
+            <div class="desc">Install api key to your site</div>
+          </div>
+        </div>
+        <!--// API Widget Setup -->
+      </section>
+      <!--// bulleted Section -->
+
+      <!-- data form id = 1 (validate API Key)-->
+      <div data-form-id="1" class="form-container validate-form">
+        <div class="form-header">
+          <img src="/images/cloud-icon.svg" alt="" />
+          <h1 class="form-title">Validate API Key</h1>
+          <div>
+            Validate your API key. If you do not have an API key then you can
+            get it from <a href="#" class="link-3">here</a>
+          </div>
+        </div>
+        <div class="form-body">
+          <div class="w-form">
+            <!-- Main Form -->
+            <form
+              id="wf-form-Validate-Key-Form"
+              name="wf-form-Validate-Key-Form"
+              data-name="Validate Key Form"
+              method="get"
+              data-wf-page-id="6764b9ff033b1e23d7f53a7c"
+              data-wf-element-id="54e67d98-095b-c58f-2518-0ac9aa73f7c4"
+              aria-label="Validate Key Form"
+            >
+              <label for="API-key" class="form-label">API Key</label
+              ><input
+                class="api-key-field w-input"
+                maxlength="256"
+                name="API-key"
+                data-name="API key"
+                placeholder=""
+                type="text"
+                id="API-key"
+              /><input
+                type="submit"
+                data-wait="Please wait..."
+                class="form-submit w-button"
+                value="Validate"
+              />
+            </form>
+            <!--// Main Form -->
+
+            <!-- Form Submission Messege -->
+            <div
+              class="w-form-done"
+              tabindex="-1"
+              role="region"
+              aria-label="Validate Key Form success"
+            >
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <!--// Form Submission Messege -->
+
+            <!-- Form Error Messege -->
+            <div
+              class="w-form-fail"
+              tabindex="-1"
+              role="region"
+              aria-label="Validate Key Form failure"
+            >
+              <div>API key is required !</div>
+            </div>
+            <!--// Form Error Messege -->
+          </div>
+        </div>
+      </div>
+      <!--// data form id = 1 (validate API Key)-->
+
+      <!-- data form id = 2 (API Widget Setup)-->
+      <div data-form-id="2" class="form-container api-setup-form" style="display: none;">
+        <div class="form-header">
+          <img src="/images/cloud-icon.svg" loading="lazy" alt="" />
+          <h1 class="form-title">API Widget Setup</h1>
+          <div>Your API key is validated. Install api key to your site</div>
+        </div>
+        <div class="form-body">
+          <div class="w-form">
+            <form
+              id="wf-form-API-Widget-Setup-Form"
+              name="wf-form-API-Widget-Setup-Form"
+              data-name="API Widget Setup Form"
+              method="get"
+              data-wf-page-id="6764b9ff033b1e23d7f53a7c"
+              data-wf-element-id="87581ac6-19e6-6d6b-7b59-6ae4307bd671"
+              aria-label="API Widget Setup Form"
+            >
+              <label for="API-key-2" class="form-label">API Key</label
+              ><input
+                class="api-key-field w-input"
+                maxlength="256"
+                name="API-key-2"
+                data-name="API Key 2"
+                placeholder=""
+                type="text"
+                id="API-key-2"
+              /><label for="API-key-2" class="form-label">Embed Code</label
+              ><input
+                class="api-key-field embed-code w-input"
+                maxlength="256"
+                name="API-key-2"
+                data-name="API Key 2"
+                placeholder=""
+                type="text"
+                id="API-key-2"
+              /><input
+                type="submit"
+                data-wait="Please wait..."
+                class="form-submit w-button"
+                value="Publish"
+              />
+            </form>
+            <div
+              class="w-form-done"
+              tabindex="-1"
+              role="region"
+              aria-label="API Widget Setup Form success"
+            >
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div
+              class="w-form-fail"
+              tabindex="-1"
+              role="region"
+              aria-label="API Widget Setup Form failure"
+            >
+              <div>API key is required !</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--// data form id = 2 (API Widget Setup)-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
