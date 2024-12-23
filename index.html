@@ -4,8 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/index.css" />
     <link rel="icon" href="/images/favicon-icon.png" type="image/x-icon" />
+    <!-- IBM Plex Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!--// IBM Plex Sans -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
+    <link rel="stylesheet" href="/src/index.css" />
+
     <title>Validate API</title>
   </head>
   <body>
@@ -21,7 +34,11 @@
               src="/images/blue-active-circle.svg"
               alt="icon"
             />
-            <img class="success-icon" src="/images/checked-circle.svg" alt="icon" />
+            <img
+              class="success-icon"
+              src="/images/checked-circle.svg"
+              alt="icon"
+            />
           </div>
           <div class="bullet-info">
             <div class="step-title active">Validate API Key</div>
@@ -33,13 +50,16 @@
         <!-- API Widget Setup -->
         <div data-form-id="2" class="step-bullet">
           <div class="bullet">
-            <img class="inactive-state-2" src="/images/circle-icon.svg" alt="" />
             <img
-              class="current-icon-2"
-              src="/images/blue-active-circle.svg"
+              class="inactive-state-2"
+              src="/images/circle-icon.svg"
               alt=""
             />
-            <img class="success-icon-2" src="/images/checked-circle.svg" alt="" />
+            <img
+              class="success-icon-2"
+              src="/images/checked-circle.svg"
+              alt=""
+            />
           </div>
           <div class="bullet-info">
             <div class="step-title inactive">API Widget Setup</div>
@@ -55,7 +75,7 @@
         <div class="form-header">
           <img src="/images/cloud-icon.svg" alt="" />
           <h1 class="form-title">Validate API Key</h1>
-          <div>
+          <div class="form-desc">
             Validate your API key. If you do not have an API key then you can
             get it from <a href="#" class="link-3">here</a>
           </div>
@@ -78,10 +98,21 @@
                 maxlength="256"
                 name="API-key"
                 data-name="API key"
-                placeholder=""
+                placeholder="Type Key"
                 type="text"
                 id="API-key"
-              /><input
+              />
+              <!-- Form Error Messege -->
+              <div
+                class="w-form-fail"
+                tabindex="-1"
+                role="region"
+                aria-label="Validate Key Form failure"
+              >
+                <div>API key is not valid. try again</div>
+              </div>
+              <!--// Form Error Messege -->
+              <input
                 type="submit"
                 data-wait="Please wait..."
                 class="form-submit w-button"
@@ -100,28 +131,23 @@
               <div>Thank you! Your submission has been received!</div>
             </div>
             <!--// Form Submission Messege -->
-
-            <!-- Form Error Messege -->
-            <div
-              class="w-form-fail"
-              tabindex="-1"
-              role="region"
-              aria-label="Validate Key Form failure"
-            >
-              <div>API key is required !</div>
-            </div>
-            <!--// Form Error Messege -->
           </div>
         </div>
       </div>
       <!--// data form id = 1 (validate API Key)-->
 
       <!-- data form id = 2 (API Widget Setup)-->
-      <div data-form-id="2" class="form-container api-setup-form" style="display: none;">
+      <div
+        data-form-id="2"
+        class="form-container api-setup-form"
+        style="display: none"
+      >
         <div class="form-header">
-          <img src="/images/cloud-icon.svg" loading="lazy" alt="" />
+          <img src="/images/form-2.svg" loading="lazy" alt="" />
           <h1 class="form-title">API Widget Setup</h1>
-          <div>Your API key is validated. Install api key to your site</div>
+          <div class="form-desc">
+            Your API key is validated. Install api key to your site
+          </div>
         </div>
         <div class="form-body">
           <div class="w-form">
@@ -143,16 +169,38 @@
                 placeholder=""
                 type="text"
                 id="API-key-2"
-              /><label for="API-key-2" class="form-label">Embed Code</label
-              ><input
+              />
+              <label for="API-key-2" class="form-label mt-4">Embed Code</label>
+              <img
+                class="copy-icon"
+                src="/images/copy-icon.png"
+                alt=""
+                title="copy to clipboard"
+              />
+              <!-- <textarea
+                readonly
                 class="api-key-field embed-code w-input"
-                maxlength="256"
-                name="API-key-2"
-                data-name="API Key 2"
+                maxlength=""
+                name="embed-code"
+                data-name="Embed Code"
                 placeholder=""
-                type="text"
-                id="API-key-2"
-              /><input
+                id="embed-code"
+              >
+                    &lt;script&gt;
+                    window.getAISettings = {
+                    apiKey:    'cdeb2854befe4252c93567562f2414adaa8101460a037f25245e2ea246d2e13c};
+                    &lt;/script&gt;
+
+                </textarea
+              > -->
+              <pre id="embed-code"><code class="language-javascript">
+&lt;script&gt;
+  window.getAISettings = {
+    apiKey: 'cdeb2854befe4252c93567562f2414adaa8101460a037f25245e2ea246d2e13c'
+  };
+&lt;/script&gt;
+  </code></pre>
+              <input
                 type="submit"
                 data-wait="Please wait..."
                 class="form-submit w-button"
@@ -177,10 +225,37 @@
             </div>
           </div>
         </div>
+        <!-- instruction -->
+        <div class="instruction">
+          <div class="instruction-container">
+            <img class="info-icon" src="/images/info.svg" alt="" />
+            <div class="instruction-text">
+              <div class="instruction-title">Instruction</div>
+              <div class="instruction-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// instruction -->
+        <!--// data form id = 2 (API Widget Setup)-->
       </div>
-      <!--// data form id = 2 (API Widget Setup)-->
+    
+      <div class="copied-to-clipboard">
+        <p class="copied-text">Copied to clipboard</p>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Highlight.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- Initialize Highlight.js -->
+    <script>
+      hljs.highlightAll();
+    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
